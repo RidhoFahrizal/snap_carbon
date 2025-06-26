@@ -11,15 +11,13 @@ class AppTheme {
       brightness: Brightness.light,
       colorScheme: const ColorScheme(
         brightness: Brightness.light,
-        primary: AppColors.green400,           // Main green (for buttons, highlights)
-        onPrimary: AppColors.neutral50,        // Text/icons on primary green
-        secondary: AppColors.green200,         // Accent green (for chips, accents)
-        onSecondary: AppColors.neutral900,
-        background: AppColors.neutral50,       // Main background
-        onBackground: AppColors.neutral900,    // Text/icons on background
-        surface: AppColors.neutral100,         // Cards, surfaces
+        primary: AppColors.green400, // Main green (for buttons, highlights)
+        onPrimary: AppColors.neutral50, // Text/icons on primary green
+        secondary: AppColors.green200, // Accent green (for chips, accents)
+        onSecondary: AppColors.neutral900, // Text/icons on background
+        surface: AppColors.neutral100, // Cards, surfaces
         onSurface: AppColors.neutral900,
-        error: Color(0xFFFF6D6D),              // Custom error (soft red)
+        error: Color(0xFFFF6D6D), // Custom error (soft red)
         onError: AppColors.neutral50,
       ),
       scaffoldBackgroundColor: AppColors.neutral50,
@@ -74,39 +72,30 @@ class AppTheme {
           textStyle: AppTypography.labelMedium,
         ),
       ),
-      cardTheme: CardTheme(
-        color: AppColors.neutral100,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppRadius.lg),
-        ),
-        margin: const EdgeInsets.all(AppSpacing.md),
-        elevation: AppShadows.sm.blurRadius,
-        shadowColor: AppShadows.sm.color,
-      ),
+      // cardTheme: CardTheme(
+      //   color: AppColors.neutral100,
+      //   shape: RoundedRectangleBorder(
+      //     borderRadius: BorderRadius.circular(AppRadius.lg),
+      //   ),
+      //   margin: const EdgeInsets.all(AppSpacing.md),
+      //   elevation: AppShadows.sm.blurRadius,
+      //   shadowColor: AppShadows.sm.color,
+      // ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: AppColors.neutral100,
         contentPadding: const EdgeInsets.all(AppSpacing.sm),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppRadius.sm),
-          borderSide: const BorderSide(
-            color: AppColors.neutral300,
-            width: 1,
-          ),
+          borderSide: const BorderSide(color: AppColors.neutral300, width: 1),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppRadius.sm),
-          borderSide: const BorderSide(
-            color: AppColors.neutral300,
-            width: 1,
-          ),
+          borderSide: const BorderSide(color: AppColors.neutral300, width: 1),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppRadius.sm),
-          borderSide: const BorderSide(
-            color: AppColors.green400,
-            width: 2,
-          ),
+          borderSide: const BorderSide(color: AppColors.green400, width: 2),
         ),
         hintStyle: AppTypography.bodyMedium.copyWith(
           color: AppColors.neutral400,
@@ -124,9 +113,7 @@ class AppTheme {
           vertical: AppSpacing.xs,
           horizontal: AppSpacing.sm,
         ),
-        labelStyle: AppTypography.bodySmall.copyWith(
-          color: AppColors.green500,
-        ),
+        labelStyle: AppTypography.bodySmall.copyWith(color: AppColors.green500),
         secondaryLabelStyle: AppTypography.bodySmall.copyWith(
           color: AppColors.neutral50,
         ),
@@ -135,14 +122,14 @@ class AppTheme {
           borderRadius: BorderRadius.circular(AppRadius.full),
         ),
       ),
-      dialogTheme: DialogTheme(
-        backgroundColor: AppColors.neutral100,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppRadius.lg),
-        ),
-        titleTextStyle: AppTypography.headingMedium,
-        contentTextStyle: AppTypography.bodyMedium,
-      ),
+      // dialogTheme: DialogTheme(
+      //   backgroundColor: AppColors.neutral100,
+      //   shape: RoundedRectangleBorder(
+      //     borderRadius: BorderRadius.circular(AppRadius.lg),
+      //   ),
+      //   titleTextStyle: AppTypography.headingMedium,
+      //   contentTextStyle: AppTypography.bodyMedium,
+      // ),
       dividerColor: AppColors.neutral200,
       appBarTheme: AppBarTheme(
         backgroundColor: AppColors.neutral50,
@@ -151,13 +138,9 @@ class AppTheme {
         titleTextStyle: AppTypography.headingMedium.copyWith(
           color: AppColors.neutral900,
         ),
-        iconTheme: const IconThemeData(
-          color: AppColors.neutral900,
-        ),
+        iconTheme: const IconThemeData(color: AppColors.neutral900),
       ),
-      iconTheme: const IconThemeData(
-        color: AppColors.green400,
-      ),
+      iconTheme: const IconThemeData(color: AppColors.green400),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: AppColors.green400,
         foregroundColor: AppColors.neutral50,

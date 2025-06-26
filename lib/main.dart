@@ -1,27 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:snapcarbon/routes/router.dart';
+import 'package:snapcarbon/services/sqflite_service.dart';
 import 'theme/app_theme.dart';
 // Make sure the file 'app_theme.dart' exists in the 'theme' folder and contains the 'AppTheme' class with a static 'getTheme' method.
 
-void main() {
-  runApp(const SnapCarbonApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
+  runApp(
+    MultiProvider(
+      providers: [Provider(create: (_) => SqliteService())],
+      child: SnapCarbonApp(),
+    ),
+  );
 }
 
 class SnapCarbonApp extends StatelessWidget {
-  const SnapCarbonApp({Key? key}) : super(key: key);
+  SnapCarbonApp({super.key});
+  final appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'SnapCarbon Theme Demo',
-      theme: AppTheme.getTheme(context), // Use the AppTheme class to get the theme
-      home: const ThemeDemoScreen(),
+      theme: AppTheme.getTheme(
+        context,
+      ), // Use the AppTheme class to get the theme
+      // home: const ThemeDemoScreen(),
+      routerConfig: appRouter.config(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
 class ThemeDemoScreen extends StatelessWidget {
-  const ThemeDemoScreen({Key? key}) : super(key: key);
+  const ThemeDemoScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -67,10 +83,7 @@ class ThemeDemoScreen extends StatelessWidget {
                 child: const Text('Outlined Button'),
               ),
               const SizedBox(height: 8),
-              TextButton(
-                onPressed: () {},
-                child: const Text('Text Button'),
-              ),
+              TextButton(onPressed: () {}, child: const Text('Text Button')),
               const SizedBox(height: 24),
 
               // Card
@@ -106,8 +119,14 @@ class ThemeDemoScreen extends StatelessWidget {
                 spacing: 8,
                 children: [
                   Chip(label: Text('Green Chip')),
-                  Chip(label: Text('Selected'), backgroundColor: theme.colorScheme.secondary),
-                  Chip(label: Text('Disabled'), backgroundColor: theme.disabledColor),
+                  Chip(
+                    label: Text('Selected'),
+                    backgroundColor: theme.colorScheme.secondary,
+                  ),
+                  Chip(
+                    label: Text('Disabled'),
+                    backgroundColor: theme.disabledColor,
+                  ),
                 ],
               ),
               const SizedBox(height: 24),
