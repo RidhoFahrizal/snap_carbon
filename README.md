@@ -1,6 +1,6 @@
 # snapcarbon
 
-A new Flutter project.
+An app that helps you calculate your carbon footprint and gives personalized tips to reduce your environmental impact.
 
 ## Getting Started
 
